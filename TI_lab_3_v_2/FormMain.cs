@@ -11,9 +11,14 @@ namespace TI_lab_3_v_2
         
         private byte[] _message;
         private byte[] _cipher;
-        private bool _isPDefine = false;
         private bool _isGDefine = false;
         private int _p;
+        private int _g;
+        private int _x;
+        private int _k;
+        private int _a;
+        private int _b;
+        private int _y;
         private int[] _primitiveFactors;
         public FormMain()
         {
@@ -40,6 +45,7 @@ namespace TI_lab_3_v_2
                 MessageBox.Show("Не удалось найти первообразные корни для p");
                 return;
             }
+            _isGDefine = true;
             cbG.Items.Clear();
             foreach (var i in _primitiveFactors)
             {
@@ -74,7 +80,37 @@ namespace TI_lab_3_v_2
 
         private void btnEncript_Click(object sender, EventArgs e)
         {
-            
+            if (!_isGDefine)
+            {
+                MessageBox.Show("Вы не выбрали первообразные корни для p");
+                return;
+            }
+            _g = _primitiveFactors[cbG.SelectedIndex];
+            tbResult.Text = "";
+            tbA.Text = "";
+            tbB.Text = "";
+            tbY.Text = "";
+            if (_message.Length == 0)
+                return;
+            if (!Logic.CheckX(tbX.Text, _p))
+            {
+                MessageBox.Show("Выбранный x не удовлетворяет условиям");
+                return;
+            }
+            _x = int.Parse(tbX.Text);
+            if (!Logic.CheckK(tbK.Text, _p))
+            {
+                MessageBox.Show("Выбранный k не удовлетворяет условиям");
+                return;
+            }
+            _k = int.Parse(tbK.Text);
+            _y = (int)Math.Pow(_g, _x) % _p;
+            tbY.Text = _y.ToString();
+            _a = (int)Math.Pow(_g, _k) % _p;
+            byte currByte = _message[0];
+            _b = (int)Math.Pow(_y, _k) * currByte % _p;
+            tbA.Text = _a.ToString();
+            tbB.Text = _b.ToString();
         }
         private bool CheckKeyInput(String key)
         {
@@ -174,6 +210,11 @@ namespace TI_lab_3_v_2
             e.Handled = true;
         }
 
-        
+
+        private void tbP_TextChanged(object sender, EventArgs e)
+        {
+            cbG.Items.Clear();
+            _isGDefine = false;
+        }
     }
 }

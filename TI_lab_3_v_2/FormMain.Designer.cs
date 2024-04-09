@@ -71,10 +71,11 @@ namespace TI_lab_3_v_2
             this.tbP.Name = "tbP";
             this.tbP.Size = new System.Drawing.Size(420, 40);
             this.tbP.TabIndex = 3;
+            this.tbP.TextChanged += new System.EventHandler(this.tbP_TextChanged);
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(68, 497);
+            this.label4.Location = new System.Drawing.Point(54, 257);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(990, 46);
             this.label4.TabIndex = 7;
@@ -82,7 +83,7 @@ namespace TI_lab_3_v_2
             // 
             // tbInput
             // 
-            this.tbInput.Location = new System.Drawing.Point(68, 636);
+            this.tbInput.Location = new System.Drawing.Point(54, 396);
             this.tbInput.Name = "tbInput";
             this.tbInput.ReadOnly = true;
             this.tbInput.Size = new System.Drawing.Size(703, 259);
@@ -91,7 +92,7 @@ namespace TI_lab_3_v_2
             // 
             // tbResult
             // 
-            this.tbResult.Location = new System.Drawing.Point(872, 636);
+            this.tbResult.Location = new System.Drawing.Point(858, 396);
             this.tbResult.Name = "tbResult";
             this.tbResult.ReadOnly = true;
             this.tbResult.Size = new System.Drawing.Size(703, 259);
@@ -100,7 +101,7 @@ namespace TI_lab_3_v_2
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(872, 588);
+            this.label2.Location = new System.Drawing.Point(858, 348);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(303, 45);
             this.label2.TabIndex = 12;
@@ -108,7 +109,7 @@ namespace TI_lab_3_v_2
             // 
             // btnChoseFile
             // 
-            this.btnChoseFile.Location = new System.Drawing.Point(69, 546);
+            this.btnChoseFile.Location = new System.Drawing.Point(55, 306);
             this.btnChoseFile.Name = "btnChoseFile";
             this.btnChoseFile.Size = new System.Drawing.Size(387, 65);
             this.btnChoseFile.TabIndex = 14;
@@ -118,7 +119,7 @@ namespace TI_lab_3_v_2
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(872, 948);
+            this.btnSave.Location = new System.Drawing.Point(858, 733);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(361, 65);
             this.btnSave.TabIndex = 15;
@@ -128,7 +129,7 @@ namespace TI_lab_3_v_2
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(1327, 948);
+            this.btnExit.Location = new System.Drawing.Point(1313, 733);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(248, 65);
             this.btnExit.TabIndex = 16;
@@ -150,7 +151,6 @@ namespace TI_lab_3_v_2
             this.tbX.Name = "tbX";
             this.tbX.Size = new System.Drawing.Size(420, 40);
             this.tbX.TabIndex = 3;
-            this.tbX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRegister_KeyPress);
             // 
             // label3
             // 
@@ -166,11 +166,10 @@ namespace TI_lab_3_v_2
             this.tbK.Name = "tbK";
             this.tbK.Size = new System.Drawing.Size(420, 40);
             this.tbK.TabIndex = 3;
-            this.tbK.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRegister_KeyPress);
             // 
             // btnEncrypt
             // 
-            this.btnEncrypt.Location = new System.Drawing.Point(466, 948);
+            this.btnEncrypt.Location = new System.Drawing.Point(452, 733);
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.Size = new System.Drawing.Size(305, 65);
             this.btnEncrypt.TabIndex = 9;
@@ -180,7 +179,7 @@ namespace TI_lab_3_v_2
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(79, 372);
+            this.label6.Location = new System.Drawing.Point(695, 150);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(185, 33);
             this.label6.TabIndex = 2;
@@ -190,14 +189,14 @@ namespace TI_lab_3_v_2
             // 
             this.cbG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbG.FormattingEnabled = true;
-            this.cbG.Location = new System.Drawing.Point(286, 372);
+            this.cbG.Location = new System.Drawing.Point(902, 150);
             this.cbG.Name = "cbG";
             this.cbG.Size = new System.Drawing.Size(273, 40);
             this.cbG.TabIndex = 17;
             // 
             // btnFindPrimitime
             // 
-            this.btnFindPrimitime.Location = new System.Drawing.Point(256, 260);
+            this.btnFindPrimitime.Location = new System.Drawing.Point(736, 38);
             this.btnFindPrimitime.Name = "btnFindPrimitime";
             this.btnFindPrimitime.Size = new System.Drawing.Size(387, 65);
             this.btnFindPrimitime.TabIndex = 14;
@@ -207,7 +206,7 @@ namespace TI_lab_3_v_2
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(795, 273);
+            this.label5.Location = new System.Drawing.Point(1235, 35);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 33);
             this.label5.TabIndex = 2;
@@ -215,7 +214,7 @@ namespace TI_lab_3_v_2
             // 
             // tbA
             // 
-            this.tbA.Location = new System.Drawing.Point(847, 273);
+            this.tbA.Location = new System.Drawing.Point(1287, 35);
             this.tbA.Name = "tbA";
             this.tbA.ReadOnly = true;
             this.tbA.Size = new System.Drawing.Size(262, 40);
@@ -224,7 +223,7 @@ namespace TI_lab_3_v_2
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(795, 341);
+            this.label7.Location = new System.Drawing.Point(1235, 103);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 33);
             this.label7.TabIndex = 2;
@@ -232,7 +231,7 @@ namespace TI_lab_3_v_2
             // 
             // tbB
             // 
-            this.tbB.Location = new System.Drawing.Point(847, 341);
+            this.tbB.Location = new System.Drawing.Point(1287, 103);
             this.tbB.Name = "tbB";
             this.tbB.ReadOnly = true;
             this.tbB.Size = new System.Drawing.Size(262, 40);
@@ -241,7 +240,7 @@ namespace TI_lab_3_v_2
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(795, 413);
+            this.label8.Location = new System.Drawing.Point(1235, 175);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 33);
             this.label8.TabIndex = 2;
@@ -249,7 +248,7 @@ namespace TI_lab_3_v_2
             // 
             // tbY
             // 
-            this.tbY.Location = new System.Drawing.Point(847, 413);
+            this.tbY.Location = new System.Drawing.Point(1287, 175);
             this.tbY.Name = "tbY";
             this.tbY.ReadOnly = true;
             this.tbY.Size = new System.Drawing.Size(262, 40);
@@ -258,7 +257,7 @@ namespace TI_lab_3_v_2
             // 
             // btnDecrypt
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(68, 948);
+            this.btnDecrypt.Location = new System.Drawing.Point(54, 733);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(305, 65);
             this.btnDecrypt.TabIndex = 9;
@@ -270,7 +269,7 @@ namespace TI_lab_3_v_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1603, 1036);
+            this.ClientSize = new System.Drawing.Size(1603, 831);
             this.Controls.Add(this.cbG);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSave);

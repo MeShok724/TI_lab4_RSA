@@ -15,15 +15,9 @@ namespace TI_lab_3_v_2
                 {
                     return number;
                 }
-                else
-                {
-                    return -1;
-                }
             }
-            else
-            {
-                return -1;
-            }
+
+            return -1;
         }
 
         public static int[] GetPrimitiveArray(int number)
@@ -93,6 +87,47 @@ namespace TI_lab_3_v_2
             }
 
             return true;
+        }
+
+        public static bool CheckX(string str, int p)
+        {
+            int number;
+
+            if (int.TryParse(str, out number))
+            {
+                if (number > 1 && number < p - 1)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+        public static bool CheckK(string str, int p)
+        {
+            int number;
+
+            if (int.TryParse(str, out number))
+            {
+                if (number > 1 && number < p - 1)
+                {
+                    if (Gcd(number, p) == 1)
+                        return true;
+                }
+            }
+
+            return false;
+        }
+        
+        private static int Gcd(int a, int b)
+        {
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
         }
     }
 }
