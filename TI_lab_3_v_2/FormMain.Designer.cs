@@ -44,7 +44,7 @@ namespace TI_lab_3_v_2
             this.tbX = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.tbK = new System.Windows.Forms.TextBox();
-            this.btnEncrypt = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cbG = new System.Windows.Forms.ComboBox();
             this.btnFindPrimitime = new System.Windows.Forms.Button();
@@ -54,7 +54,9 @@ namespace TI_lab_3_v_2
             this.tbB = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbY = new System.Windows.Forms.TextBox();
-            this.btnDecrypt = new System.Windows.Forms.Button();
+            this.btnEncrypt = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lRootCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lKey1
@@ -71,6 +73,7 @@ namespace TI_lab_3_v_2
             this.tbP.Name = "tbP";
             this.tbP.Size = new System.Drawing.Size(420, 40);
             this.tbP.TabIndex = 3;
+            this.tbP.Text = "269";
             this.tbP.TextChanged += new System.EventHandler(this.tbP_TextChanged);
             // 
             // label4
@@ -151,6 +154,7 @@ namespace TI_lab_3_v_2
             this.tbX.Name = "tbX";
             this.tbX.Size = new System.Drawing.Size(420, 40);
             this.tbX.TabIndex = 3;
+            this.tbX.Text = "5";
             // 
             // label3
             // 
@@ -166,16 +170,17 @@ namespace TI_lab_3_v_2
             this.tbK.Name = "tbK";
             this.tbK.Size = new System.Drawing.Size(420, 40);
             this.tbK.TabIndex = 3;
+            this.tbK.Text = "5";
             // 
-            // btnEncrypt
+            // btnDecrypt
             // 
-            this.btnEncrypt.Location = new System.Drawing.Point(452, 733);
-            this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(305, 65);
-            this.btnEncrypt.TabIndex = 9;
-            this.btnEncrypt.Text = "Дешифровать";
-            this.btnEncrypt.UseVisualStyleBackColor = true;
-            this.btnEncrypt.Click += new System.EventHandler(this.btnEncript_Click);
+            this.btnDecrypt.Location = new System.Drawing.Point(452, 733);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(305, 65);
+            this.btnDecrypt.TabIndex = 9;
+            this.btnDecrypt.Text = "Дешифровать";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // label6
             // 
@@ -219,7 +224,6 @@ namespace TI_lab_3_v_2
             this.tbA.ReadOnly = true;
             this.tbA.Size = new System.Drawing.Size(262, 40);
             this.tbA.TabIndex = 3;
-            this.tbA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRegister_KeyPress);
             // 
             // label7
             // 
@@ -236,7 +240,6 @@ namespace TI_lab_3_v_2
             this.tbB.ReadOnly = true;
             this.tbB.Size = new System.Drawing.Size(262, 40);
             this.tbB.TabIndex = 3;
-            this.tbB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRegister_KeyPress);
             // 
             // label8
             // 
@@ -253,17 +256,31 @@ namespace TI_lab_3_v_2
             this.tbY.ReadOnly = true;
             this.tbY.Size = new System.Drawing.Size(262, 40);
             this.tbY.TabIndex = 3;
-            this.tbY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbRegister_KeyPress);
             // 
-            // btnDecrypt
+            // btnEncrypt
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(54, 733);
-            this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(305, 65);
-            this.btnDecrypt.TabIndex = 9;
-            this.btnDecrypt.Text = "Зашифровать";
-            this.btnDecrypt.UseVisualStyleBackColor = true;
-            this.btnDecrypt.Click += new System.EventHandler(this.btnEncript_Click);
+            this.btnEncrypt.Location = new System.Drawing.Point(54, 733);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(305, 65);
+            this.btnEncrypt.TabIndex = 9;
+            this.btnEncrypt.Text = "Зашифровать";
+            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncript_Click);
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(715, 198);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(111, 33);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Кол-во:";
+            // 
+            // lRootCount
+            // 
+            this.lRootCount.Location = new System.Drawing.Point(715, 231);
+            this.lRootCount.Name = "lRootCount";
+            this.lRootCount.Size = new System.Drawing.Size(113, 33);
+            this.lRootCount.TabIndex = 2;
             // 
             // FormMain
             // 
@@ -277,8 +294,8 @@ namespace TI_lab_3_v_2
             this.Controls.Add(this.btnChoseFile);
             this.Controls.Add(this.tbResult);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncrypt);
+            this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.tbInput);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbB);
@@ -288,6 +305,8 @@ namespace TI_lab_3_v_2
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tbK);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.lRootCount);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tbX);
@@ -302,6 +321,9 @@ namespace TI_lab_3_v_2
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lRootCount;
 
         private System.Windows.Forms.Button btnDecrypt;
 
