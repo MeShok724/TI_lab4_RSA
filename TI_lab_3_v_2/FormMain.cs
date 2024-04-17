@@ -152,12 +152,15 @@ namespace TI_lab_3_v_2
             
             tbResult.Text = $"{_cipher_short[0] + _cipher_short[1]}, ";
             tbResult.Text += string.Join(", ", _cipher_short);
-            byte[] messageNew = Logic.DecryptData(_cipher_short, _p, _x);
-            int a = messageNew.Length;
+            
+            // tbResult.Text = $"{_cipher_short[0] + _cipher_short[1]}";
             // for (int i = 2; i < _cipher_short.Length; i += 2)
             // {
             //     tbResult.Text += $", {_cipher_short[i] + _cipher_short[i + 1]}";
             // }
+            
+            // byte[] messageNew = Logic.DecryptData(_cipher_short, _p, _x);
+            // int a = messageNew.Length;
         }
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
