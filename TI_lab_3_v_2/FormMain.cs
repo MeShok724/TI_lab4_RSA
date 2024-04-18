@@ -150,11 +150,11 @@ namespace TI_lab_3_v_2
             _cipher_short = Logic.EncryptData(_message, _p, _x, _k, _g, _y);
             is_cipher_short = true;
             
-            tbResult.Text = $"{_cipher_short[0] + _cipher_short[1]}, ";
+            // tbResult.Text = $"{_cipher_short[0] + _cipher_short[1]}, ";
             tbResult.Text += string.Join(", ", _cipher_short);
             
             // tbResult.Text = $"{_cipher_short[0] + _cipher_short[1]}";
-            // for (int i = 2; i < _cipher_short.Length; i += 2)
+            // for (int i = 0; i < _cipher_short.Length; i += 2)
             // {
             //     tbResult.Text += $", {_cipher_short[i] + _cipher_short[i + 1]}";
             // }
