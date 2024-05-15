@@ -45,7 +45,7 @@ namespace TI_lab_3_v_2.Properties
                 if ((resourceMan == null))
                 {
                     global::System.Resources.ResourceManager temp =
-                        new global::System.Resources.ResourceManager("TI_lab_3_v_2.Properties.Resources",
+                        new global::System.Resources.ResourceManager("TI_lab4_RSA.Properties.Resources",
                             typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

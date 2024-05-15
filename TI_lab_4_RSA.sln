@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TI_lab_3_v_2", "TI_lab_3_v_2\TI_lab_3_v_2.csproj", "{1113A164-5AA0-471F-A6DC-51013BC85DE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TI_lab4_RSA", "TI_lab4_RSA\TI_lab4_RSA.csproj", "{1113A164-5AA0-471F-A6DC-51013BC85DE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
