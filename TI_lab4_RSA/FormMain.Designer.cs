@@ -40,49 +40,43 @@ namespace TI_lab_3_v_2
             this.btnChoseFile = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbX = new System.Windows.Forms.TextBox();
+            this.tbQ = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbK = new System.Windows.Forms.TextBox();
-            this.btnDecrypt = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbG = new System.Windows.Forms.ComboBox();
-            this.btnFindPrimitime = new System.Windows.Forms.Button();
+            this.tbD = new System.Windows.Forms.TextBox();
+            this.btnCheck = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbA = new System.Windows.Forms.TextBox();
+            this.tbHash = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.tbB = new System.Windows.Forms.TextBox();
+            this.tbE = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbY = new System.Windows.Forms.TextBox();
-            this.btnEncrypt = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lRootCount = new System.Windows.Forms.Label();
+            this.tbR = new System.Windows.Forms.TextBox();
+            this.btnSign = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lKey1
             // 
-            this.lKey1.Location = new System.Drawing.Point(79, 38);
+            this.lKey1.Location = new System.Drawing.Point(70, 41);
             this.lKey1.Name = "lKey1";
-            this.lKey1.Size = new System.Drawing.Size(205, 33);
+            this.lKey1.Size = new System.Drawing.Size(64, 33);
             this.lKey1.TabIndex = 2;
-            this.lKey1.Text = "Введите p:";
+            this.lKey1.Text = "p:";
             // 
             // tbP
             // 
-            this.tbP.Location = new System.Drawing.Point(256, 38);
+            this.tbP.Location = new System.Drawing.Point(150, 34);
             this.tbP.Name = "tbP";
             this.tbP.Size = new System.Drawing.Size(420, 40);
             this.tbP.TabIndex = 3;
-            this.tbP.Text = "269";
-            this.tbP.TextChanged += new System.EventHandler(this.tbP_TextChanged);
+            this.tbP.Text = "17";
             // 
             // label4
             // 
             this.label4.Location = new System.Drawing.Point(54, 257);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(990, 46);
+            this.label4.Size = new System.Drawing.Size(703, 46);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Выберите файл для шифровани/дешифрования:";
+            this.label4.Text = "Выберите файл для подписи или проверки:";
             // 
             // tbInput
             // 
@@ -140,177 +134,128 @@ namespace TI_lab_3_v_2
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // label1
+            // tbQ
             // 
-            this.label1.Location = new System.Drawing.Point(79, 97);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(205, 33);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Введите x:";
-            // 
-            // tbX
-            // 
-            this.tbX.Location = new System.Drawing.Point(256, 97);
-            this.tbX.Name = "tbX";
-            this.tbX.Size = new System.Drawing.Size(420, 40);
-            this.tbX.TabIndex = 3;
-            this.tbX.Text = "5";
+            this.tbQ.Location = new System.Drawing.Point(150, 93);
+            this.tbQ.Name = "tbQ";
+            this.tbQ.Size = new System.Drawing.Size(420, 40);
+            this.tbQ.TabIndex = 3;
+            this.tbQ.Text = "19";
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(79, 152);
+            this.label3.Location = new System.Drawing.Point(70, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 33);
+            this.label3.Size = new System.Drawing.Size(46, 33);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Введите k:";
+            this.label3.Text = "d:";
             // 
-            // tbK
+            // tbD
             // 
-            this.tbK.Location = new System.Drawing.Point(256, 152);
-            this.tbK.Name = "tbK";
-            this.tbK.Size = new System.Drawing.Size(420, 40);
-            this.tbK.TabIndex = 3;
-            this.tbK.Text = "5";
+            this.tbD.Location = new System.Drawing.Point(150, 148);
+            this.tbD.Name = "tbD";
+            this.tbD.Size = new System.Drawing.Size(420, 40);
+            this.tbD.TabIndex = 3;
+            this.tbD.Text = "67";
             // 
-            // btnDecrypt
+            // btnCheck
             // 
-            this.btnDecrypt.Location = new System.Drawing.Point(452, 733);
-            this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(305, 65);
-            this.btnDecrypt.TabIndex = 9;
-            this.btnDecrypt.Text = "Дешифровать";
-            this.btnDecrypt.UseVisualStyleBackColor = true;
-            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
-            // 
-            // label6
-            // 
-            this.label6.Location = new System.Drawing.Point(695, 150);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(185, 33);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Выберите g:";
-            // 
-            // cbG
-            // 
-            this.cbG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbG.FormattingEnabled = true;
-            this.cbG.Location = new System.Drawing.Point(902, 150);
-            this.cbG.Name = "cbG";
-            this.cbG.Size = new System.Drawing.Size(273, 40);
-            this.cbG.TabIndex = 17;
-            // 
-            // btnFindPrimitime
-            // 
-            this.btnFindPrimitime.Location = new System.Drawing.Point(736, 38);
-            this.btnFindPrimitime.Name = "btnFindPrimitime";
-            this.btnFindPrimitime.Size = new System.Drawing.Size(387, 65);
-            this.btnFindPrimitime.TabIndex = 14;
-            this.btnFindPrimitime.Text = "Рассчитать первообразные:";
-            this.btnFindPrimitime.UseVisualStyleBackColor = true;
-            this.btnFindPrimitime.Click += new System.EventHandler(this.btnFindPrimitime_Click);
+            this.btnCheck.Location = new System.Drawing.Point(452, 733);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(305, 65);
+            this.btnCheck.TabIndex = 9;
+            this.btnCheck.Text = "Проверить";
+            this.btnCheck.UseVisualStyleBackColor = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(1235, 35);
+            this.label5.Location = new System.Drawing.Point(645, 159);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 33);
+            this.label5.Size = new System.Drawing.Size(102, 33);
             this.label5.TabIndex = 2;
-            this.label5.Text = "a:";
+            this.label5.Text = "Хэш:";
             // 
-            // tbA
+            // tbHash
             // 
-            this.tbA.Location = new System.Drawing.Point(1287, 35);
-            this.tbA.Name = "tbA";
-            this.tbA.ReadOnly = true;
-            this.tbA.Size = new System.Drawing.Size(262, 40);
-            this.tbA.TabIndex = 3;
+            this.tbHash.Location = new System.Drawing.Point(772, 152);
+            this.tbHash.Name = "tbHash";
+            this.tbHash.ReadOnly = true;
+            this.tbHash.Size = new System.Drawing.Size(262, 40);
+            this.tbHash.TabIndex = 3;
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(1235, 103);
+            this.label7.Location = new System.Drawing.Point(688, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 33);
             this.label7.TabIndex = 2;
-            this.label7.Text = "b:";
+            this.label7.Text = "e:";
             // 
-            // tbB
+            // tbE
             // 
-            this.tbB.Location = new System.Drawing.Point(1287, 103);
-            this.tbB.Name = "tbB";
-            this.tbB.ReadOnly = true;
-            this.tbB.Size = new System.Drawing.Size(262, 40);
-            this.tbB.TabIndex = 3;
+            this.tbE.Location = new System.Drawing.Point(772, 34);
+            this.tbE.Name = "tbE";
+            this.tbE.Size = new System.Drawing.Size(262, 40);
+            this.tbE.TabIndex = 3;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(1235, 175);
+            this.label8.Location = new System.Drawing.Point(688, 103);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 33);
             this.label8.TabIndex = 2;
-            this.label8.Text = "y:";
+            this.label8.Text = "r:";
             // 
-            // tbY
+            // tbR
             // 
-            this.tbY.Location = new System.Drawing.Point(1287, 175);
-            this.tbY.Name = "tbY";
-            this.tbY.ReadOnly = true;
-            this.tbY.Size = new System.Drawing.Size(262, 40);
-            this.tbY.TabIndex = 3;
+            this.tbR.Location = new System.Drawing.Point(772, 96);
+            this.tbR.Name = "tbR";
+            this.tbR.Size = new System.Drawing.Size(262, 40);
+            this.tbR.TabIndex = 3;
             // 
-            // btnEncrypt
+            // btnSign
             // 
-            this.btnEncrypt.Location = new System.Drawing.Point(54, 733);
-            this.btnEncrypt.Name = "btnEncrypt";
-            this.btnEncrypt.Size = new System.Drawing.Size(305, 65);
-            this.btnEncrypt.TabIndex = 9;
-            this.btnEncrypt.Text = "Зашифровать";
-            this.btnEncrypt.UseVisualStyleBackColor = true;
-            this.btnEncrypt.Click += new System.EventHandler(this.btnEncript_Click);
+            this.btnSign.Location = new System.Drawing.Point(54, 733);
+            this.btnSign.Name = "btnSign";
+            this.btnSign.Size = new System.Drawing.Size(305, 65);
+            this.btnSign.TabIndex = 9;
+            this.btnSign.Text = "Подписать";
+            this.btnSign.UseVisualStyleBackColor = true;
+            this.btnSign.Click += new System.EventHandler(this.btnSign_Click);
             // 
-            // label9
+            // label1
             // 
-            this.label9.Location = new System.Drawing.Point(715, 198);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(111, 33);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Кол-во:";
-            // 
-            // lRootCount
-            // 
-            this.lRootCount.Location = new System.Drawing.Point(715, 231);
-            this.lRootCount.Name = "lRootCount";
-            this.lRootCount.Size = new System.Drawing.Size(113, 33);
-            this.lRootCount.TabIndex = 2;
+            this.label1.Location = new System.Drawing.Point(70, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 33);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "q:";
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1603, 831);
-            this.Controls.Add(this.cbG);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnFindPrimitime);
             this.Controls.Add(this.btnChoseFile);
             this.Controls.Add(this.tbResult);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnEncrypt);
-            this.Controls.Add(this.btnDecrypt);
+            this.Controls.Add(this.btnSign);
+            this.Controls.Add(this.btnCheck);
             this.Controls.Add(this.tbInput);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbB);
-            this.Controls.Add(this.tbY);
-            this.Controls.Add(this.tbA);
+            this.Controls.Add(this.tbE);
+            this.Controls.Add(this.tbR);
+            this.Controls.Add(this.tbHash);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.tbK);
+            this.Controls.Add(this.tbD);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lRootCount);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbX);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tbQ);
             this.Controls.Add(this.tbP);
             this.Controls.Add(this.lKey1);
             this.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -322,30 +267,22 @@ namespace TI_lab_3_v_2
             this.PerformLayout();
         }
 
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lRootCount;
-
-        private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.Button btnCheck;
 
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbY;
+        private System.Windows.Forms.TextBox tbR;
 
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbA;
+        private System.Windows.Forms.TextBox tbHash;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox tbB;
+        private System.Windows.Forms.TextBox tbE;
 
-        private System.Windows.Forms.ComboBox cbG;
-        private System.Windows.Forms.Button btnFindPrimitime;
-
-        private System.Windows.Forms.Label label6;
-
-        private System.Windows.Forms.Button btnEncrypt;
+        private System.Windows.Forms.Button btnSign;
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbX;
+        private System.Windows.Forms.TextBox tbQ;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbK;
+        private System.Windows.Forms.TextBox tbD;
 
         private System.Windows.Forms.TextBox tbP;
 

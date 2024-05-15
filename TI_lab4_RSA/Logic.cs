@@ -1,12 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TI_lab_3_v_2
 {
-    public class Logic
+    public static class Logic
     {
-        private bool outputPow = false;
-        private const int KMaxDiff = 10;
+        public static int H0 = 100;
+        public static int topLimit = (int)Math.Round(Math.Sqrt(Int32.MaxValue)); 
+        public static int botLimit = 1;
+        public class JsonDataClass
+        {
+            public string text { get; set; }
+            public int S { get; set; }
+        }
+        
+        public static int GetHash(int H0, int[] data, int r)
+        {
+            int H = H0;
+            foreach (var M in data)
+            {
+                H = (int)(((long)(H + (M)) * (H + M)) % r);
+            }
+            return H;
+        }
+
+        public static int GetSignature(int m, int d, int r)
+        {
+            // int signature = modPow(m, d, r);
+            // return signature;
+            return modPow(m, d, r);
+        }
+
+        public static int GetE(int fR, int d)
+        {
+            // int e = modInverse(d, fR);
+            // return e;
+            return modInverse(d, fR);
+        }
+
+        public static bool CheckE(int e, int fR)
+        {
+            if (e >= fR || e <= 1) 
+                return false;
+            return gcd_bool(e, fR);
+        }
+
+        public static bool CheckSignature(JsonDataClass data, int e, int r)
+        {
+            int hash = GetHash(H0, StringToIntArray(data.text), r);
+            int m = modPow(data.S, e, r);
+            return hash == m;
+        }
+        
         public static int CheckPrime(string input)  // Проверка числа на простое и парсинг
         {
             int number;
@@ -20,121 +66,6 @@ namespace TI_lab_3_v_2
             }
 
             return -1;
-        }
-
-        public static int[] GetPrimitiveArray(int number)
-        {
-            int[] primeFactors = GetPrimeFactors(number);
-            List<int> result = new List<int>();
-            for (int i = 2; i<number; i++)
-            {
-                if (IsPrimitiveRoot(i, number, primeFactors))
-                {
-                    result.Add(i);
-                }
-            }
-
-            return result.ToArray();
-        }
-        public static bool CheckX(string str, int p)
-        {
-            int number;
-
-            if (int.TryParse(str, out number))
-            {
-                if (number > 1 && number < p - 1)
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-        public static bool CheckK(string str, int p)
-        {
-            int number;
-
-            if (int.TryParse(str, out number))
-            {
-                if (number > 1 && number < p - 1)
-                {
-                    if (Gcd(number, p-1) == 1)
-                        return true;
-                }
-            }
-
-            return false;
-        }
-
-        public static short[] EncryptData(byte[] message, int p, int x, int k, int g, int y)
-        {
-            short[] cipher = new short[message.Length * 2];
-            int startK = k;
-            for (int i = 0; i < message.Length; i++)
-            {
-                short a = (short)modPow(g, k, p);
-                byte currByte = message[i];
-                long curr1 = modPow(y, k, p);
-                long curr2 = curr1 * currByte;
-                short b = (short)(curr2 % p);
-                cipher[i*2] = a;
-                cipher[i*2+1] = b;
-                int addToK = 1;
-                while (!GCD(k + addToK, p - 1))
-                {
-                    addToK++;
-                }
-                k = (k + addToK) < p - 1 ? k + addToK : startK;
-            }
-            return cipher;
-        }
-
-        public static byte[] DecryptData(short[] cipher, int p, int x)
-        {
-            byte[] message = new byte[cipher.Length / 2];
-            for (int i = 0; i < message.Length; i++)
-            {
-                short a = cipher[i * 2];
-                short b = cipher[i*2+1];
-                int a1 = modPow(a, x, p);
-                int s = ModInverse(p, a1);
-                byte curr = (byte)(b * s % p);
-                message[i] = curr;
-            }
-            return message;
-        }
-        
-        private static int[] GetPrimeFactors(int number) //Получение делителей числа
-        {
-            int result = number - 1;
-            List<int> primeFactors = new List<int>();
-
-            for (int i = 2; i <= result; i++)
-            {
-                while (result % i == 0)
-                {
-                    if (!primeFactors.Contains(i))
-                    {
-                        primeFactors.Add(i);
-                    }
-                    result /= i;
-                }
-            }
-            return primeFactors.ToArray();
-        }
-        private static bool IsPrimitiveRoot(int a, int p, int[] delInts)    // Проверка числа на примитивный корень
-        {
-            int p1 = p - 1;
-            if (p <= 1 || a <= 0)
-                return false;
-            foreach (var i in delInts)
-            {
-                if (modPow(a, (p - 1) / i, p) == 1)
-                {
-                    return false;
-                }
-            }
-            return true;
         }
 
         private static bool IsPrime(int number) // Проверка числе на простое без парсинга
@@ -154,18 +85,9 @@ namespace TI_lab_3_v_2
 
             return true;
         }
-        private static int Gcd(int a, int b)
-        {
-            while (b != 0)
-            {
-                int temp = b;
-                b = a % b;
-                a = temp;
-            }
-            return a;
-        }
         
-        private static int ModInverse(int a, int b)
+        
+        private static int modInverse(int b, int a)
         {
             int d0 = a;
             int d1 = b;
@@ -190,7 +112,17 @@ namespace TI_lab_3_v_2
 
             return y1;
         }
-        private static bool GCD(int a, int b)
+        private static int Gcd(int a, int b)
+        {
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+            return a;
+        }
+        private static bool gcd_bool(int a, int b)
         {
             while (b != 0)
             {
@@ -199,33 +131,6 @@ namespace TI_lab_3_v_2
                 a = temp;
             }
             return a == 1;
-        }
-
-        public static byte[] ShortToByte(short[] shorts)
-        {
-            byte[] bytes = new byte[shorts.Length*2];
-            for (int i = 0; i < shorts.Length; i++)
-            {
-                bytes[i * 2] = (byte)(shorts[i] & 0xFF); // младший байт
-                bytes[i * 2 + 1] = (byte)((shorts[i] >> 8) & 0xFF); // старший байт
-            }
-            return bytes;
-        }
-        public static short[] ByteToShort(byte[] bytes)
-        {
-            if (bytes.Length % 2 != 0)
-            {
-                throw new ArgumentException("Array length must be even to convert to shorts.");
-            }
-
-            short[] shorts = new short[bytes.Length / 2];
-
-            for (int i = 0; i < shorts.Length; i++)
-            {
-                shorts[i] = (short)((bytes[i * 2 + 1] << 8) | bytes[i * 2]);
-            }
-
-            return shorts;
         }
         public static int modPow(int a, int b, int m)
         {
@@ -247,6 +152,10 @@ namespace TI_lab_3_v_2
             }
 
             return x;
+        }
+        public static int[] StringToIntArray(string input)
+        {
+            return input.Select(c => (int)c).ToArray();
         }
     }
 }
