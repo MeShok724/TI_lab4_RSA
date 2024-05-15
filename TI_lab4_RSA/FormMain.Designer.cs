@@ -52,6 +52,8 @@ namespace TI_lab_3_v_2
             this.tbR = new System.Windows.Forms.TextBox();
             this.btnSign = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbS = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lKey1
@@ -170,7 +172,7 @@ namespace TI_lab_3_v_2
             // 
             // label5
             // 
-            this.label5.Location = new System.Drawing.Point(645, 159);
+            this.label5.Location = new System.Drawing.Point(772, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 33);
             this.label5.TabIndex = 2;
@@ -178,7 +180,7 @@ namespace TI_lab_3_v_2
             // 
             // tbHash
             // 
-            this.tbHash.Location = new System.Drawing.Point(772, 152);
+            this.tbHash.Location = new System.Drawing.Point(899, 152);
             this.tbHash.Name = "tbHash";
             this.tbHash.ReadOnly = true;
             this.tbHash.Size = new System.Drawing.Size(262, 40);
@@ -186,7 +188,7 @@ namespace TI_lab_3_v_2
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(688, 41);
+            this.label7.Location = new System.Drawing.Point(815, 41);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 33);
             this.label7.TabIndex = 2;
@@ -194,14 +196,14 @@ namespace TI_lab_3_v_2
             // 
             // tbE
             // 
-            this.tbE.Location = new System.Drawing.Point(772, 34);
+            this.tbE.Location = new System.Drawing.Point(899, 34);
             this.tbE.Name = "tbE";
             this.tbE.Size = new System.Drawing.Size(262, 40);
             this.tbE.TabIndex = 3;
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(688, 103);
+            this.label8.Location = new System.Drawing.Point(815, 103);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 33);
             this.label8.TabIndex = 2;
@@ -209,7 +211,7 @@ namespace TI_lab_3_v_2
             // 
             // tbR
             // 
-            this.tbR.Location = new System.Drawing.Point(772, 96);
+            this.tbR.Location = new System.Drawing.Point(899, 96);
             this.tbR.Name = "tbR";
             this.tbR.Size = new System.Drawing.Size(262, 40);
             this.tbR.TabIndex = 3;
@@ -232,6 +234,22 @@ namespace TI_lab_3_v_2
             this.label1.TabIndex = 2;
             this.label1.Text = "q:";
             // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(772, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(102, 33);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "ЭЦП:";
+            // 
+            // tbS
+            // 
+            this.tbS.Location = new System.Drawing.Point(899, 211);
+            this.tbS.Name = "tbS";
+            this.tbS.ReadOnly = true;
+            this.tbS.Size = new System.Drawing.Size(262, 40);
+            this.tbS.TabIndex = 3;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
@@ -248,9 +266,11 @@ namespace TI_lab_3_v_2
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tbE);
             this.Controls.Add(this.tbR);
+            this.Controls.Add(this.tbS);
             this.Controls.Add(this.tbHash);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.tbD);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label1);
@@ -266,6 +286,9 @@ namespace TI_lab_3_v_2
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbS;
 
         private System.Windows.Forms.Button btnCheck;
 

@@ -9,6 +9,13 @@ namespace TI_lab_3_v_2
         public static int H0 = 100;
         public static int topLimit = (int)Math.Round(Math.Sqrt(Int32.MaxValue)); 
         public static int botLimit = 1;
+
+        public class ResponseOfCheck
+        {
+            public int hash { get; set; }
+            public int m { get; set; }
+            public bool result { get; set; }
+        }
         public class JsonDataClass
         {
             public string text { get; set; }
@@ -46,11 +53,13 @@ namespace TI_lab_3_v_2
             return gcd_bool(e, fR);
         }
 
-        public static bool CheckSignature(JsonDataClass data, int e, int r)
+        public static ResponseOfCheck CheckSignature(JsonDataClass data, int e, int r)
         {
-            int hash = GetHash(H0, StringToIntArray(data.text), r);
-            int m = modPow(data.S, e, r);
-            return hash == m;
+            var res = new ResponseOfCheck();
+            res.hash = GetHash(H0, StringToIntArray(data.text), r);
+            res.m = modPow(data.S, e, r);
+            res.result = res.hash == res.m;
+            return res;
         }
         
         public static int CheckPrime(string input)  // Проверка числа на простое и парсинг

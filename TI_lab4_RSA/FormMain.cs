@@ -127,6 +127,7 @@ namespace TI_lab_3_v_2
             tbE.Text = _e.ToString();
             tbR.Text = _r.ToString();
             tbHash.Text = _hash.ToString();
+            tbS.Text = _signature.ToString();
             tbResult.Text = $"text: {_jsonDataClass.text}, S: {_jsonDataClass.S}";
         }
         private void btnCheck_Click(object sender, EventArgs e)
@@ -158,11 +159,11 @@ namespace TI_lab_3_v_2
             }
             _jsonDataClass = JsonConvert.DeserializeObject<Logic.JsonDataClass>(_messageText);
             tbHash.Text = Logic.GetHash(Logic.H0, Logic.StringToIntArray(_jsonDataClass.text), _r).ToString();
-            bool result = Logic.CheckSignature(_jsonDataClass, _e, _r);
-            if (result)
-                MessageBox.Show($"Содержимое файла не изменено");
+            Logic.ResponseOfCheck result = Logic.CheckSignature(_jsonDataClass, _e, _r);
+            if (result.result)
+                MessageBox.Show($"Содержимое файла не изменено, хэш = {result.hash}, m = {result.m}");
             else
-                MessageBox.Show($"Содержимое файла было изменено");
+                MessageBox.Show($"Содержимое файла было изменено, хэш = {result.hash}, m = {result.m}");
         }
     }
 }
